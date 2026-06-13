@@ -1,0 +1,82 @@
+[
+  {
+    "flight_id": "fl-arr-ev1",
+    "airline": "Thai Sky",
+    "origin": "CNX",
+    "destination": "BKK",
+    "departure_time": "2026-03-26T08:00:00Z",
+    "price": 1400
+  },
+  {
+    "flight_id": "fl-dep-ev1",
+    "airline": "Thai Sky",
+    "origin": "BKK",
+    "destination": "CNX",
+    "departure_time": "2026-03-28T18:00:00Z",
+    "price": 1350
+  },
+  {
+    "flight_id": "fl-arr-ev3",
+    "airline": "Siam Airways",
+    "origin": "HKT",
+    "destination": "BKK",
+    "departure_time": "2026-03-03T10:30:00Z",
+    "price": 1650
+  },
+  {
+    "flight_id": "fl-dep-ev3",
+    "airline": "Siam Airways",
+    "origin": "BKK",
+    "destination": "HKT",
+    "departure_time": "2026-03-05T19:30:00Z",
+    "price": 1500
+  },
+  {
+    "flight_id": "fl-arr-ev4",
+    "airline": "Royal Thai",
+    "origin": "CNX",
+    "destination": "BKK",
+    "departure_time": "2026-05-02T13:00:00Z",
+    "price": 1250
+  },
+  {
+    "flight_id": "fl-dep-ev4",
+    "airline": "Royal Thai",
+    "origin": "BKK",
+    "destination": "CNX",
+    "departure_time": "2026-05-04T17:00:00Z",
+    "price": 1200
+  },
+  {
+    "flight_id": "fl-arr-ev9",
+    "airline": "Andaman Jet",
+    "origin": "BKK",
+    "destination": "HKT",
+    "departure_time": "2026-07-28T09:15:00Z",
+    "price": 1800
+  },
+  {
+    "flight_id": "fl-dep-ev9",
+    "airline": "Andaman Jet",
+    "origin": "HKT",
+    "destination": "BKK",
+    "departure_time": "2026-07-30T16:45:00Z",
+    "price": 1750
+  },
+  {
+    "flight_id": "fl-arr-ev28",
+    "airline": "Eco Jet",
+    "origin": "BKK",
+    "destination": "CNX",
+    "departure_time": "2026-11-26T07:45:00Z",
+    "price": 950
+  },
+  {
+    "flight_id": "fl-dep-ev28",
+    "airline": "Eco Jet",
+    "origin": "CNX",
+    "destination": "BKK",
+    "departure_time": "2026-11-28T15:30:00Z",
+    "price": 990
+  }
+]

@@ -1,0 +1,44 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: 'Inter', 'Noto Sans Thai', sans-serif;
+  background-color: #f7f9fb;
+}
+
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.focus-ring:focus {
+  outline: 3px solid #0051d5;
+  outline-offset: 2px;
+}
+
+.focus-ring:focus-visible {
+  outline: 3px solid #0051d5;
+  outline-offset: 2px;
+}
+
+/* Custom scrollbar adjustments for a clean, premium dashboard layout */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: #eceef0;
+  border-radius: 8px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #75777d;
+  border-radius: 4px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #545f73;
+}
