@@ -1,5 +1,45 @@
 [
   {
+    "review_id": "rev-accessibility-1",
+    "user_id": "u001",
+    "target_id": "h-001",
+    "target_type": "HOTEL",
+    "rating": 4,
+    "comment": "ทางลาดหน้าโรงแรมมีระดับลาดเอียงดีมากครับ แต่ราวจับในห้องน้ำบางห้องน้ำยึดไม่แน่นเท่าไหร่ โดยรวมสะดวกสบายมากสำหรับผู้ใช้รถเข็นวีลแชร์",
+    "timestamp": "2026-03-28T09:15:00Z",
+    "images": []
+  },
+  {
+    "review_id": "rev-accessibility-2",
+    "user_id": "u002",
+    "target_id": "h-002",
+    "target_type": "HOTEL",
+    "rating": 5,
+    "comment": "มีปุ่มกดฉุกเฉินและทางลาดรถเข็นกว้างขวางดีมาก นำทางสะดวกและมีแผ่นนำทางคนตาบอด (Tactile Paving) ชัดเจน",
+    "timestamp": "2026-03-29T10:00:00Z",
+    "images": []
+  },
+  {
+    "review_id": "rev-accessibility-3",
+    "user_id": "u003",
+    "target_id": "ev-001",
+    "target_type": "EVENT",
+    "rating": 5,
+    "comment": "ประทับใจงานนิทรรศการนี้มาก มีการจัดเก้าอี้โซนพิเศษสำหรับผู้บกพร่องทางการได้ยิน และมีล่ามภาษามือแปลสดอยู่ด้านหน้าชัดเจนมากครับ",
+    "timestamp": "2026-03-28T14:30:00Z",
+    "images": []
+  },
+  {
+    "review_id": "rev-accessibility-4",
+    "user_id": "u004",
+    "target_id": "ev-003",
+    "target_type": "EVENT",
+    "rating": 3,
+    "comment": "สถานที่จัดงานแคบและเสียงสะท้อนดังมาก คนที่มีความอ่อนไหวต่อประสาทสัมผัส (Sensory Sensitive) อาจจะเวียนหัวได้ง่าย แต่ยังดีที่มีโซนห้องเงียบ (Quiet Zone) แยกให้หลบไปพักด้านข้าง",
+    "timestamp": "2026-03-05T11:00:00Z",
+    "images": []
+  },
+  {
     "review_id": "rev-1001",
     "user_id": "u009",
     "target_id": "h-024",

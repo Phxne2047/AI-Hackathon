@@ -5,7 +5,8 @@
     "email": "somchai@example.com",
     "phone": "081-111-1111",
     "loyalty_points": 500,
-    "role": "MEMBER"
+    "role": "MEMBER",
+    "accessibility_profile": "physical"
   },
   {
     "user_id": "u002",
@@ -13,7 +14,8 @@
     "email": "alice@example.com",
     "phone": "089-999-9999",
     "loyalty_points": 1200,
-    "role": "VIP"
+    "role": "VIP",
+    "accessibility_profile": "visual"
   },
   {
     "user_id": "u003",
@@ -21,7 +23,8 @@
     "email": "mana.d@example.com",
     "phone": "082-222-3333",
     "loyalty_points": 50,
-    "role": "MEMBER"
+    "role": "MEMBER",
+    "accessibility_profile": "hearing"
   },
   {
     "user_id": "u004",
@@ -29,7 +32,8 @@
     "email": "somsri.j@example.com",
     "phone": "083-444-5555",
     "loyalty_points": 850,
-    "role": "MEMBER"
+    "role": "MEMBER",
+    "accessibility_profile": "sensory"
   },
   {
     "user_id": "u005",
@@ -37,7 +41,8 @@
     "email": "john.doe@example.com",
     "phone": "091-234-5678",
     "loyalty_points": 2100,
-    "role": "VIP"
+    "role": "VIP",
+    "accessibility_profile": "none"
   },
   {
     "user_id": "u006",

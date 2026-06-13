@@ -5,7 +5,8 @@
     "location": "Bangkok",
     "rating": 4.8,
     "price_per_night": 3500,
-    "amenities": ["Pool", "Wifi", "Gym", "Breakfast"]
+    "amenities": ["Pool", "Wifi", "Gym", "Breakfast"],
+    "universal_design_amenities": ["wide_bathroom_doors", "grab_bars", "low_switches"]
   },
   {
     "hotel_id": "h-002",
@@ -13,7 +14,8 @@
     "location": "Phuket",
     "rating": 4.5,
     "price_per_night": 4200,
-    "amenities": ["Pool", "Wifi", "Beach Access", "Spa", "Bar"]
+    "amenities": ["Pool", "Wifi", "Beach Access", "Spa", "Bar"],
+    "universal_design_amenities": ["wheelchair_ramp", "tactile_paving"]
   },
   {
     "hotel_id": "h-003",
@@ -21,7 +23,8 @@
     "location": "Chiang Mai",
     "rating": 4.7,
     "price_per_night": 1800,
-    "amenities": ["Wifi", "Breakfast", "Garden"]
+    "amenities": ["Wifi", "Breakfast", "Garden"],
+    "universal_design_amenities": ["grab_bars", "emergency_button"]
   },
   {
     "hotel_id": "h-004",
@@ -29,7 +32,8 @@
     "location": "Pattaya",
     "rating": 4.0,
     "price_per_night": 1200,
-    "amenities": ["Wifi", "Parking", "Gym"]
+    "amenities": ["Wifi", "Parking", "Gym"],
+    "universal_design_amenities": ["wheelchair_ramp", "elevator_braille"]
   },
   {
     "hotel_id": "h-005",

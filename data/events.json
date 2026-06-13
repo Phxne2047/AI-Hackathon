@@ -4,35 +4,45 @@
     "title": "Art Exhibition 2026",
     "date": "2026-03-27T00:00:00Z",
     "location": "BITEC Bangna",
-    "ticket_price": 0
+    "ticket_price": 0,
+    "accessibility_features": ["wheelchair_ramp", "sensory_friendly"],
+    "special_seating_quota": {"wheelchair_zone": 8, "sensory_zone": 12}
   },
   {
     "event_id": "ev-002",
     "title": "Blockchain Expo 2026",
     "date": "2026-12-30T00:00:00Z",
     "location": "Impact Arena",
-    "ticket_price": 0
+    "ticket_price": 0,
+    "accessibility_features": ["wheelchair_ramp", "sign_interpreter"],
+    "special_seating_quota": {"wheelchair_zone": 15, "interpreter_front_row": 10}
   },
   {
     "event_id": "ev-003",
     "title": "Book Launch 2026",
     "date": "2026-03-04T00:00:00Z",
     "location": "Thunder Dome",
-    "ticket_price": 2500
+    "ticket_price": 2500,
+    "accessibility_features": ["wheelchair_ramp", "audio_description", "quiet_zone"],
+    "special_seating_quota": {"wheelchair_zone": 5, "quiet_seating": 8}
   },
   {
     "event_id": "ev-004",
     "title": "Yoga Retreat 2026",
     "date": "2026-05-03T00:00:00Z",
     "location": "Siam Paragon",
-    "ticket_price": 500
+    "ticket_price": 500,
+    "accessibility_features": ["quiet_zone", "sensory_friendly"],
+    "special_seating_quota": {"sensory_zone": 20}
   },
   {
     "event_id": "ev-005",
     "title": "Book Launch 2026",
     "date": "2026-05-05T00:00:00Z",
     "location": "Impact Arena",
-    "ticket_price": 100
+    "ticket_price": 100,
+    "accessibility_features": ["sign_interpreter"],
+    "special_seating_quota": {"interpreter_front_row": 5}
   },
   {
     "event_id": "ev-006",
