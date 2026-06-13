@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+
+<html class="light" lang="th"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>CareGo Oasis - ค้นหาและจองบริการ</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                "outline-variant": "#c5c6cd",
+                "surface-dim": "#d8dadc",
+                "primary-fixed-dim": "#bcc7de",
+                "on-secondary-fixed": "#00174b",
+                "error-container": "#ffdad6",
+                "surface": "#f7f9fb",
+                "background": "#f7f9fb",
+                "on-error-container": "#93000a",
+                "surface-container": "#eceef0",
+                "primary": "#091426",
+                "tertiary-container": "#00301f",
+                "on-primary-fixed-variant": "#3c475a",
+                "surface-variant": "#e0e3e5",
+                "surface-container-low": "#f2f4f6",
+                "secondary-fixed-dim": "#b4c5ff",
+                "on-tertiary-container": "#24a375",
+                "surface-tint": "#545f73",
+                "inverse-surface": "#2d3133",
+                "tertiary": "#00190e",
+                "outline": "#75777d",
+                "on-primary-container": "#8590a6",
+                "secondary-container": "#316bf3",
+                "surface-container-lowest": "#ffffff",
+                "surface-container-high": "#e6e8ea",
+                "on-tertiary-fixed": "#002114",
+                "on-surface": "#191c1e",
+                "on-secondary-fixed-variant": "#003ea8",
+                "error": "#ba1a1a",
+                "tertiary-fixed": "#85f8c4",
+                "primary-fixed": "#d8e3fb",
+                "on-surface-variant": "#45474c",
+                "on-error": "#ffffff",
+                "on-primary-fixed": "#111c2d",
+                "surface-container-highest": "#e0e3e5",
+                "on-tertiary-fixed-variant": "#005137",
+                "primary-container": "#1e293b",
+                "secondary-fixed": "#dbe1ff",
+                "tertiary-fixed-dim": "#68dba9",
+                "on-tertiary": "#ffffff",
+                "inverse-on-surface": "#eff1f3",
+                "on-secondary": "#ffffff",
+                "on-primary": "#ffffff",
+                "surface-bright": "#f7f9fb",
+                "on-secondary-container": "#fefcff",
+                "inverse-primary": "#bcc7de",
+                "on-background": "#191c1e",
+                "secondary": "#0051d5"
+            },
+            "borderRadius": {
+                "DEFAULT": "0.25rem",
+                "lg": "0.5rem",
+                "xl": "0.75rem",
+                "full": "9999px"
+            },
+            "spacing": {
+                "margin-mobile": "16px",
+                "sm": "8px",
+                "lg": "24px",
+                "md": "16px",
+                "xl": "40px",
+                "xs": "4px",
+                "unit": "8px",
+                "container-max": "1280px",
+                "xxl": "64px",
+                "gutter": "24px"
+            },
+            "fontFamily": {
+                "headline-lg": ["Inter", "sans-serif"],
+                "headline-md": ["Inter", "sans-serif"],
+                "body-lg": ["Inter", "sans-serif"],
+                "body-md": ["Inter", "sans-serif"],
+                "label-lg": ["Inter", "sans-serif"],
+                "label-sm": ["Inter", "sans-serif"],
+                "display": ["Inter", "sans-serif"]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .focus-ring:focus-visible {
+            outline: 3px solid #0051d5;
+            outline-offset: 2px;
+        }
+        .custom-checkbox:checked {
+            background-color: #0051d5;
+            border-color: #0051d5;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .fill-icon {
+            font-variation-settings: 'FILL' 1;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface min-h-screen flex flex-col">
+<!-- TopNavBar (Shared Component) -->
+<header class="bg-surface-container-lowest sticky top-0 z-50 shadow-md">
+<nav class="flex justify-between items-center w-full px-md md:px-xl py-sm max-w-container-max mx-auto h-20">
+<div class="flex items-center gap-lg">
+<span class="font-display text-display text-primary">CareGo Oasis</span>
+<div class="hidden md:flex gap-md">
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors focus-ring px-2 py-1 rounded-lg" href="#">Dashboard</a>
+<a class="font-body-md text-body-md text-secondary border-b-2 border-secondary pb-1 focus-ring px-2 rounded-lg" href="#">Search</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors focus-ring px-2 py-1 rounded-lg" href="#">Help</a>
+</div>
+</div>
+<div class="flex items-center gap-md">
+<button aria-label="Accessibility settings" class="p-2 text-secondary hover:bg-surface-container-high rounded-full transition-colors focus-ring">
+<span class="material-symbols-outlined" data-icon="accessibility_new">accessibility_new</span>
+</button>
+<button aria-label="Notifications" class="p-2 text-secondary hover:bg-surface-container-high rounded-full transition-colors focus-ring">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<img alt="User profile" class="w-10 h-10 rounded-full border-2 border-secondary object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCmevlGC6fLh16Ty-ni_prke52oNhy12-HyjZ3JFp6v8SKsdH2hoO_4gT0QESTIgdQqORlen7RbXQ6rAsUkNawiiER4wtPQQUhbqYNVLvWbDUbgzxSQt8Zv--zrxmRYX3_PlHvscwcweJoxUImYtEUQPvV3HbF5lRDykT2HZEf46HH3aOliaJUUUi4WkG7tohOpwjPJz4ZG94DD1pbuHj9hatXY2khY0OSppRp9Hy_OzBG7EHtthnE9N54kr-UXPcpm2PPc-fj1YwO7"/>
+</div>
+</nav>
+</header>
+<main class="flex-grow max-w-container-max mx-auto w-full px-md md:px-xl py-xl">
+<!-- Search & Switcher Tabs -->
+<section class="mb-xl">
+<div class="flex flex-col md:flex-row gap-lg items-end">
+<div class="flex-grow w-full">
+<h1 class="font-headline-lg text-headline-lg mb-md">ค้นหาประสบการณ์การเดินทางที่เข้าถึงได้</h1>
+<div class="relative w-full">
+<span class="absolute left-4 top-1/2 -translate-y-1/2 text-outline material-symbols-outlined">search</span>
+<input class="w-full pl-12 pr-4 py-4 bg-surface-container-lowest border-2 border-outline-variant rounded-xl focus:border-secondary focus:ring-0 transition-all font-body-md text-body-md shadow-sm focus-ring" placeholder="ค้นหาจุดหมายปลายทาง กิจกรรม หรือโรงแรม..." type="text"/>
+</div>
+</div>
+</div>
+<!-- Tabs Switcher -->
+<div class="flex flex-wrap gap-md mt-lg">
+<button class="flex-1 min-w-[140px] flex items-center justify-center gap-sm py-4 bg-secondary text-on-secondary rounded-xl font-label-lg shadow-lg focus-ring">
+<span class="material-symbols-outlined fill-icon" data-icon="confirmation_number">confirmation_number</span>
+                    ตั๋วเข้าชม
+                </button>
+<button class="flex-1 min-w-[140px] flex items-center justify-center gap-sm py-4 bg-surface-container-lowest text-on-surface-variant hover:bg-secondary-fixed-dim hover:text-on-secondary-fixed transition-all border-2 border-outline-variant rounded-xl font-label-lg focus-ring">
+<span class="material-symbols-outlined" data-icon="flight">flight</span>
+                    เที่ยวบิน
+                </button>
+<button class="flex-1 min-w-[140px] flex items-center justify-center gap-sm py-4 bg-surface-container-lowest text-on-surface-variant hover:bg-secondary-fixed-dim hover:text-on-secondary-fixed transition-all border-2 border-outline-variant rounded-xl font-label-lg focus-ring">
+<span class="material-symbols-outlined" data-icon="hotel">hotel</span>
+                    โรงแรม
+                </button>
+</div>
+</section>
+<div class="grid grid-cols-1 lg:grid-cols-4 gap-xl">
+<!-- Accessibility Priority Filter Bar -->
+<aside class="lg:col-span-1">
+<div class="bg-surface-container-lowest p-lg rounded-xl shadow-sm sticky top-28">
+<h2 class="font-headline-md text-headline-md mb-lg">ตัวกรองสิ่งอำนวยความสะดวก</h2>
+<div class="space-y-md">
+<label class="flex items-center gap-md group cursor-pointer p-sm rounded-lg hover:bg-surface-container transition-colors focus-within:ring-2 focus-within:ring-secondary">
+<input class="w-6 h-6 rounded custom-checkbox border-2 border-outline-variant focus:ring-0" type="checkbox"/>
+<span class="flex items-center gap-sm font-label-lg text-label-lg">
+<span class="material-symbols-outlined text-secondary" data-icon="accessible">accessible</span>
+                                ทางลาดสำหรับรถเข็น
+                            </span>
+</label>
+<label class="flex items-center gap-md group cursor-pointer p-sm rounded-lg hover:bg-surface-container transition-colors focus-within:ring-2 focus-within:ring-secondary">
+<input class="w-6 h-6 rounded custom-checkbox border-2 border-outline-variant focus:ring-0" type="checkbox"/>
+<span class="flex items-center gap-sm font-label-lg text-label-lg">
+<span class="material-symbols-outlined text-secondary" data-icon="sign_language">sign_language</span>
+                                ล่ามภาษามือ
+                            </span>
+</label>
+<label class="flex items-center gap-md group cursor-pointer p-sm rounded-lg hover:bg-surface-container transition-colors focus-within:ring-2 focus-within:ring-secondary">
+<input checked="" class="w-6 h-6 rounded custom-checkbox border-2 border-outline-variant focus:ring-0" type="checkbox"/>
+<span class="flex items-center gap-sm font-label-lg text-label-lg">
+<span class="material-symbols-outlined text-secondary" data-icon="accessible_forward">accessible_forward</span>
+                                บริการขนส่งที่เข้าถึงได้
+                            </span>
+</label>
+<label class="flex items-center gap-md group cursor-pointer p-sm rounded-lg hover:bg-surface-container transition-colors focus-within:ring-2 focus-within:ring-secondary">
+<input class="w-6 h-6 rounded custom-checkbox border-2 border-outline-variant focus:ring-0" type="checkbox"/>
+<span class="flex items-center gap-sm font-label-lg text-label-lg">
+<span class="material-symbols-outlined text-secondary" data-icon="volume_up">volume_up</span>
+                                ระบบช่วยเหลือการฟัง
+                            </span>
+</label>
+</div>
+<div class="mt-xl pt-xl border-t border-outline-variant">
+<button class="w-full py-3 bg-primary text-on-primary rounded-xl font-label-lg hover:bg-primary-container transition-colors focus-ring">
+                            ล้างตัวกรองทั้งหมด
+                        </button>
+</div>
+</div>
+</aside>
+<!-- Visual-Heavy Cards Grid -->
+<section class="lg:col-span-3">
+<div class="flex justify-between items-center mb-lg">
+<p class="font-body-md text-body-md text-on-surface-variant">พบทั้งหมด <span class="font-bold text-on-surface">128</span> รายการในไทย</p>
+<select class="bg-transparent border-none font-label-lg text-label-lg focus:ring-0 cursor-pointer">
+<option>เรียงตาม: ยอดนิยม</option>
+<option>ราคา: ต่ำไปสูง</option>
+<option>ความเข้าถึง: ดีเยี่ยม</option>
+</select>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-lg">
+<!-- Card 1 -->
+<article class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-md flex flex-col group focus-ring border-2 border-transparent hover:border-secondary transition-all" tabindex="0">
+<div class="relative h-64">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A vibrant outdoor concert in Chiang Mai featuring a modern stage with professional lighting. The crowd is inclusive, with clearly designated and elevated wheelchair accessible viewing platforms. The evening sky is deep indigo, contrasting with the warm, golden stage lights, creating an empowering and festive cultural atmosphere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCc4Vdgt0bPLdz25zebZdFXA8W5Qolf1q5C6OuRAtyEO4hZwRYK0KUDx7HrZDS6IXvKIY8jbSztsDdkD3xPYji4zL5m5ftlEpX6iCNZALS6pjWmci9LUyYXW7ZoxLRF7zjj6D9Np-0aM8gePt-2qHkN1SFNTuOOMtCNSfZYGpbgvlyCRKOeSrxwpQN52agNUB0MaespgPb3wWO9174-okKemNk50fBUWOGpCvQNN6mWq0Au25mKeN_bScpJwd-6NcVP7Pxu5hslynXz"/>
+<div class="absolute top-4 left-4 bg-tertiary-container text-on-tertiary-container px-3 py-1.5 rounded-full flex items-center gap-2 font-label-sm shadow-md">
+<span class="material-symbols-outlined text-sm" data-icon="accessible">accessible</span>
+                                Wheelchair Friendly
+                            </div>
+</div>
+<div class="p-lg flex-grow flex flex-col">
+<div class="flex justify-between items-start mb-sm">
+<h3 class="font-headline-md text-headline-md">Chiang Mai Winter Concert</h3>
+<div class="flex items-center text-secondary">
+<span class="material-symbols-outlined fill-icon" data-icon="star">star</span>
+<span class="font-label-lg ml-1">4.9</span>
+</div>
+</div>
+<p class="text-on-surface-variant font-body-md mb-md line-clamp-2">คอนเสิร์ตท่ามกลางลมหนาวที่เชียงใหม่ พร้อมพื้นที่พิเศษสำหรับผู้ใช้รถเข็นและล่ามภาษามือตลอดงาน</p>
+<div class="flex flex-wrap gap-sm mb-lg">
+<span class="bg-surface-container px-2 py-1 rounded text-label-sm">ทางลาด</span>
+<span class="bg-surface-container px-2 py-1 rounded text-label-sm">ล่ามภาษามือ</span>
+</div>
+<div class="mt-auto flex justify-between items-center">
+<span class="text-secondary font-headline-md">฿1,200</span>
+<button class="bg-secondary text-on-secondary px-6 py-3 rounded-xl font-label-lg hover:bg-secondary-container transition-colors focus-ring">จองตั๋ว</button>
+</div>
+</div>
+</article>
+<!-- Card 2 -->
+<article class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-md flex flex-col group focus-ring border-2 border-transparent hover:border-secondary transition-all" tabindex="0">
+<div class="relative h-64">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A luxury boutique hotel exterior in a lush tropical garden setting in Thailand. The architecture is modern and minimalist with wide, seamless stone pathways and zero-threshold entryways. Soft evening lighting highlights the accessibility features and the serene, high-contrast light mode design, evoking a sense of safety and premium relaxation." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDK8FhCKdsg21srGwhocLX2YxKqYhuA_EnPZfdB_NJfGaBkesiHocMYXJ0IyuVmdlTSB7XJ_xdxpiHCJrhpnRlGOgN2busPZZ9GjhZtBv7EeoaGRB0-9aN3PHopd2VNkzuW_drkaPP6ZEj12BHi5CROPxCSZPX4jsAhluTUxPEfX3BfPyccgqjVwvmIEeke3hygNVdAA-CX5PtnRs4n4K8afiK6iE5Y3U7jiwpOmu_NyeqmGKy8_LmqFjwmct4ezB3McMuHqeJYZNoh"/>
+<div class="absolute top-4 left-4 bg-tertiary-container text-on-tertiary-container px-3 py-1.5 rounded-full flex items-center gap-2 font-label-sm shadow-md">
+<span class="material-symbols-outlined text-sm" data-icon="accessible">accessible</span>
+                                Wheelchair Friendly
+                            </div>
+</div>
+<div class="p-lg flex-grow flex flex-col">
+<div class="flex justify-between items-start mb-sm">
+<h3 class="font-headline-md text-headline-md">Oasis Boutique Resort</h3>
+<div class="flex items-center text-secondary">
+<span class="material-symbols-outlined fill-icon" data-icon="star">star</span>
+<span class="font-label-lg ml-1">4.8</span>
+</div>
+</div>
+<p class="text-on-surface-variant font-body-md mb-md line-clamp-2">โรงแรมระดับพรีเมียมที่ออกแบบมาเพื่อความเท่าเทียม ห้องพักกว้างขวางและสิ่งอำนวยความสะดวกครบครัน</p>
+<div class="flex flex-wrap gap-sm mb-lg">
+<span class="bg-surface-container px-2 py-1 rounded text-label-sm">ห้องน้ำกว้างพิเศษ</span>
+<span class="bg-surface-container px-2 py-1 rounded text-label-sm">ปุ่มขอความช่วยเหลือ</span>
+</div>
+<div class="mt-auto flex justify-between items-center">
+<span class="text-secondary font-headline-md">฿3,500<span class="text-label-sm font-normal text-on-surface-variant">/คืน</span></span>
+<button class="bg-secondary text-on-secondary px-6 py-3 rounded-xl font-label-lg hover:bg-secondary-container transition-colors focus-ring">ดูห้องว่าง</button>
+</div>
+</div>
+</article>
+<!-- Card 3 -->
+<article class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-md flex flex-col group focus-ring border-2 border-transparent hover:border-secondary transition-all" tabindex="0">
+<div class="relative h-64">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A modern art museum interior with vast, airy white spaces and smooth polished floors. A diverse group of visitors, including a person using a wheelchair, are admiring colorful contemporary paintings. Large clear signage and wide corridors emphasize a high-contrast, inclusive environment designed for easy navigation and visual clarity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBoRl9q5NqbgLpRCDOY9KrUYtm6-gruaNlKCnGbMyJZ74KnOyDuzp-kBPKC9kpPtwosWbh0WajlRpDOjL1uULnL8GP8fyzRXMg-4hBYvBf73_LXG9yL--EBDNmRyW7OetYtj5px0-I9uhoWM5ccP4c7ZGJGwO-gr59iq7_SniqvL2obiZMM45QPDABNSSZXhCDLoSmIuO8utF6iQKKvXODG6rOcLOm9O-VCLyskHHLRhNo7Wf6uceyP7sf8KFS3ksn-YdegTQs_0s1K"/>
+<div class="absolute top-4 left-4 bg-tertiary-container text-on-tertiary-container px-3 py-1.5 rounded-full flex items-center gap-2 font-label-sm shadow-md">
+<span class="material-symbols-outlined text-sm" data-icon="accessible">accessible</span>
+                                Wheelchair Friendly
+                            </div>
+</div>
+<div class="p-lg flex-grow flex flex-col">
+<div class="flex justify-between items-start mb-sm">
+<h3 class="font-headline-md text-headline-md">Bangkok Modern Art Tour</h3>
+<div class="flex items-center text-secondary">
+<span class="material-symbols-outlined fill-icon" data-icon="star">star</span>
+<span class="font-label-lg ml-1">4.7</span>
+</div>
+</div>
+<p class="text-on-surface-variant font-body-md mb-md line-clamp-2">ทัวร์หอศิลป์สมัยใหม่พร้อมรถรับส่งที่รองรับรถเข็นไฟฟ้า และไกด์ที่ผ่านการอบรมพิเศษ</p>
+<div class="flex flex-wrap gap-sm mb-lg">
+<span class="bg-surface-container px-2 py-1 rounded text-label-sm">รถรับส่งคนพิการ</span>
+<span class="bg-surface-container px-2 py-1 rounded text-label-sm">เครื่องบรรยายเสียง</span>
+</div>
+<div class="mt-auto flex justify-between items-center">
+<span class="text-secondary font-headline-md">฿850</span>
+<button class="bg-secondary text-on-secondary px-6 py-3 rounded-xl font-label-lg hover:bg-secondary-container transition-colors focus-ring">จองทัวร์</button>
+</div>
+</div>
+</article>
+<!-- Card 4 -->
+<article class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-md flex flex-col group focus-ring border-2 border-transparent hover:border-secondary transition-all" tabindex="0">
+<div class="relative h-64">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A clean, modern beach club deck with high-contrast furniture and a specialized aquatic wheelchair ready for use. A wide wooden ramp leads directly to the turquoise water. Bright, high-key sunlight and a clear blue sky create a fresh, inclusive atmosphere for a stress-free beach experience in a tropical paradise." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDl7Y8jCZ5XagyDZ7dTWTy03y3nGzM5mPpzJrvq9SCVFUNrs6Cw8T9YLt7YtwbKZ2903h4UT29I3zkKy0xvf_ANKEpxo91BvcjKFLMIz8J3p-O4PlMhOsCYps7OkLYTEDTX0ASk9ErOnU2qcsGPngmjJQJpMIRROewkdk3FdnVsk2rD_rlwsJ6hLfLAJ0FxEQjUDvczgwVlJ4w2Vf0wMOC9U-ZzEdF4tVx0CtoPN3Dz_n_0TY1NHoRyxE5BalYW4q_YiJl2X9U-cCPA"/>
+<div class="absolute top-4 left-4 bg-tertiary-container text-on-tertiary-container px-3 py-1.5 rounded-full flex items-center gap-2 font-label-sm shadow-md">
+<span class="material-symbols-outlined text-sm" data-icon="accessible">accessible</span>
+                                Wheelchair Friendly
+                            </div>
+</div>
+<div class="p-lg flex-grow flex flex-col">
+<div class="flex justify-between items-start mb-sm">
+<h3 class="font-headline-md text-headline-md">Phuket Accessible Beach Club</h3>
+<div class="flex items-center text-secondary">
+<span class="material-symbols-outlined fill-icon" data-icon="star">star</span>
+<span class="font-label-lg ml-1">5.0</span>
+</div>
+</div>
+<p class="text-on-surface-variant font-body-md mb-md line-clamp-2">สัมผัสหาดทรายขาวด้วยรถเข็นสะเทินน้ำสะเทินบก พร้อมสิ่งอำนวยความสะดวกมาตรฐานสากล</p>
+<div class="flex flex-wrap gap-sm mb-lg">
+<span class="bg-surface-container px-2 py-1 rounded text-label-sm">รถเข็นชายหาด</span>
+<span class="bg-surface-container px-2 py-1 rounded text-label-sm">ทางลาดลงน้ำ</span>
+</div>
+<div class="mt-auto flex justify-between items-center">
+<span class="text-secondary font-headline-md">฿1,500</span>
+<button class="bg-secondary text-on-secondary px-6 py-3 rounded-xl font-label-lg hover:bg-secondary-container transition-colors focus-ring">จองวันพักผ่อน</button>
+</div>
+</div>
+</article>
+</div>
+<!-- Pagination -->
+<div class="mt-xl flex justify-center gap-sm">
+<button class="w-12 h-12 flex items-center justify-center rounded-lg bg-surface-container-high hover:bg-outline-variant focus-ring">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<button class="w-12 h-12 flex items-center justify-center rounded-lg bg-secondary text-on-secondary font-label-lg focus-ring">1</button>
+<button class="w-12 h-12 flex items-center justify-center rounded-lg bg-surface-container-low hover:bg-surface-container-high font-label-lg focus-ring">2</button>
+<button class="w-12 h-12 flex items-center justify-center rounded-lg bg-surface-container-low hover:bg-surface-container-high font-label-lg focus-ring">3</button>
+<button class="w-12 h-12 flex items-center justify-center rounded-lg bg-surface-container-high hover:bg-outline-variant focus-ring">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</section>
+</div>
+</main>
+<!-- Footer (Shared Component) -->
+<footer class="bg-primary text-on-primary w-full py-xl px-md md:px-xl flex flex-col md:flex-row justify-between items-center gap-lg">
+<div class="flex flex-col gap-sm items-center md:items-start">
+<span class="font-headline-md text-headline-md text-on-primary">CareGo Oasis</span>
+<p class="font-body-md text-body-md text-primary-fixed-dim">© 2024 CareGo Oasis. All rights reserved. Built for accessibility.</p>
+</div>
+<div class="flex flex-wrap justify-center gap-lg">
+<a class="font-label-sm text-label-sm text-primary-fixed-dim hover:text-on-primary-fixed-variant transition-colors focus-ring p-1" href="#">Contact Support (SLS)</a>
+<a class="font-label-sm text-label-sm text-primary-fixed-dim hover:text-on-primary-fixed-variant transition-colors focus-ring p-1" href="#">Accessibility Statement</a>
+<a class="font-label-sm text-label-sm text-primary-fixed-dim hover:text-on-primary-fixed-variant transition-colors focus-ring p-1" href="#">Privacy Policy</a>
+<a class="font-label-sm text-label-sm text-primary-fixed-dim hover:text-on-primary-fixed-variant transition-colors focus-ring p-1" href="#">Terms of Service</a>
+</div>
+</footer>
+<script>
+        // Micro-interaction for switcher tabs
+        const tabButtons = document.querySelectorAll('.flex-wrap.gap-md.mt-lg button');
+        tabButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                tabButtons.forEach(btn => {
+                    btn.classList.remove('bg-secondary', 'text-on-secondary');
+                    btn.classList.add('bg-surface-container-lowest', 'text-on-surface-variant');
+                });
+                button.classList.add('bg-secondary', 'text-on-secondary');
+                button.classList.remove('bg-surface-container-lowest', 'text-on-surface-variant');
+            });
+        });
+    </script>
+</body></html>
