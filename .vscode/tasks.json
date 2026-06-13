@@ -1,0 +1,11 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Initialize Nuxt 4 Project",
+			"type": "shell",
+			"command": "cd /Users/pattama/Documents/AI-Hackathon && npx nuxi@latest init carego-oasis --package-manager pnpm",
+			"isBackground": false
+		}
+	]
+}
